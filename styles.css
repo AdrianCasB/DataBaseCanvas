@@ -1,0 +1,166 @@
+*{
+  margin: 0 auto;	
+}
+
+#contenedor{
+  width:800px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: Open Sans;
+  font-size: 11pt;
+  color: #4c4c4c;
+}
+
+header {
+  width:100%;
+}
+
+ section {
+  width: 588px;
+  margin-right: 10px;
+  float:left;
+  border: 1px solid #000;
+}
+
+section article{
+  width: 576px;
+  float:left;
+  padding : 4px;
+}
+
+article header, aside header{
+  width: 100%;
+  padding: 2px;
+  background:#000;
+  color: #fff;
+  
+}
+
+
+aside {
+  width: 190px;
+  float:left;
+  
+  margin-bottom: 4px;
+  padding : 4px;
+  
+  
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  
+}
+
+
+
+
+footer{
+  width: 800px;
+  padding: 8px;
+  background:#000;
+  color:#fff;
+  clear:both;
+  float:left;
+  margin-top:6px;
+}
+
+
+article table {
+	width:100%;
+}
+
+article form {
+	width100%;
+	}
+article table th {
+		color:#fff;
+	   background:#000;
+	 
+		   padding-left:4px;
+		   
+}
+
+article table td {
+	       color:#000;
+		  
+		   padding-left:4px;
+		   
+}
+article table tr:nth-child(even){
+                         background-color:#edddad;
+}
+article table tr:nth-child(odd){
+                         background-color:#ebcc6c;
+}
+
+input#concepto, input#fecha, input#importe, input#id_modi, input#concepto_modi, input#fecha_modi, input#importe_modi{
+	border: 1px solid #000;
+	-webkit-border-radius: 6px ;  
+    -moz-border-radius: 6px ; 
+}
+
+button#enviar, button{
+	border: 1px solid #194501;
+	-webkit-border-radius: 6px ;  
+    -moz-border-radius: 6px ; 
+	background:#276804;
+	color:#fff;
+	
+}
+
+/* Movil en vertical */
+
+@media screen and (max-width:620px ) {
+  
+  #contenedor{width:100%;}
+  
+  header, canvas {
+	  
+	width:80%;
+	height:100%;
+	left:-100%;
+	margin:0;
+	position: fixed;
+  
+  }
+  
+  body {
+    font-size: 0.9em;
+  }
+  
+  
+   
+  section, section article {
+	width:100%;
+  }
+   
+  aside{
+	width:100%;
+	margin-left:0;
+  }
+  
+  footer{width:100%;}
+ 
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

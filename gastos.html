@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Control de Gastos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="indexed.js"></script>
+  <script src="canvas.js"></script>
+  
+  <script>
+  function iniciar(){
+    
+    
+    //document.formulario.addEventListener("invalid", validacion, true);
+    
+	document.formulario.addEventListener("input", controlar, false);
+  }
+  
+  //function validacion(e){
+    //var elemento=e.target;
+    //elemento.style.background='#fdeb88';
+  //}
+  
+  
+  function controlar(e){
+    var elemento=e.target;
+    if(elemento.validity.valid){
+      elemento.style.background='#d4fdd2';
+    }else{
+      elemento.style.background='#fb8282';
+    }
+  }
+
+  window.addEventListener("load", iniciar, false);
+</script>
+</head>
+<body>
+  <div id="contenedor">
+  <header>
+  
+		<canvas id="lienzo" width="800" height="200">
+        Su navegador no soporta el elemento canvas
+      </canvas>
+	</header>
+	<nav></nav>
+  
+  <section>
+    <article>
+	<header> Alta de Datos </header>
+    <form name="formulario">
+	Concepto</br>
+      <input type="text" id="concepto"  list="conceptos" /><p></p>
+	  
+	   
+            <datalist id="conceptos">
+              <option value="Luz">
+              <option value="Agua">
+              <option value="Gas">
+              <option value="Gasolina">
+            </datalist>
+	  
+	  
+	  Fecha</br>
+      <input type="date" id="fecha"  /> <p></p>
+	  Importe</br>
+      <input pattern="[0-9]{1,}" type="text" id="importe"  /><p></p>
+      <button type="button" id="enviar" onclick="anadir();" >Guardar</button>
+    </form>
+	</article>
+	<article>
+	<header> Consulta de Datos </header>
+    <div id="elements">
+      <table>
+        <caption>Gastos</caption>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Fecha</th>
+            <th> Importe</th>
+			<th colspan=2> Modifi.</th>
+          </tr>
+        </thead>
+        <tbody id="elementsList">
+          <tr>
+            <td colspan="3">No hay elementos</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+	  </article>
+	  </section>
+      <aside>
+	  <header> Modificaciones </header>
+	  
+	  <form name="formulario1">
+	    
+	    
+	    ID</br><input type="text" id="id_modi" disabled /><p></p>
+        Concepto</br><input type="text" id="concepto_modi" list="conceptos"/><p></p>
+		 <datalist id="conceptos">
+              <option value="Luz">
+              <option value="Agua">
+              <option value="Gás">
+              <option value="Gasolina">
+            </datalist>
+        Fecha</br><input type="date" id="fecha_modi"  /> <p></p>
+        Importe</br><input type="text" id="importe_modi" /><p></p>
+        <button type="button" onclick="actualizar();">Actualizar</button>
+      </form>
+	 
+  </aside> 
+  <footer>
+	  
+	    Todos los derechos reservados
+	  
+	</footer>
+  </div>
+</body>
+</html>
+
